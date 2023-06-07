@@ -1,13 +1,21 @@
+/* eslint-disable react/no-unescaped-entities */
 import "./Banner.css"
 const Banner = () => {
     return (
         <div className="hero min-h-screen bannerBg" >
   <div className="hero-overlay bg-opacity-20"></div>
   <div className="hero-content text-center text-neutral-content">
-    <div className="max-w-md">
-      <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-      <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">Get Started</button>
+    <div className="space-y-5">
+      <h1 className=" upper-case font-bold text-5xl text-purple-700 ">
+     " Transform Your Love for 
+      </h1>
+      <h1 className=" upper-case font-bold text-5xl text-pink-500 ">
+      for Fashion into a Successful Career  
+      </h1>
+      <h1 className=" upper-case font-bold text-5xl text-orange-500 ">
+       at Fashion House "
+      </h1>
+      
     </div>
   </div>
 </div>
