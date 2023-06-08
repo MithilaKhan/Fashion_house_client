@@ -9,6 +9,7 @@ const Banner = () => {
       <h1 className=" upper-case font-bold text-5xl text-purple-700 ">
      " Transform Your Love for 
       </h1>
+      {/* hello  */}
       <h1 className=" upper-case font-bold text-5xl text-pink-500 ">
       for Fashion into a Successful Career  
       </h1>
