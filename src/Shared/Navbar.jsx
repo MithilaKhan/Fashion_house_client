@@ -28,7 +28,7 @@ const Navbar = () => {
   </div>
   {/* TODO: LOGIN TO ENROLL  */}
   <div className="navbar-end  ">
-    <a className="btn bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white">Login Now</a>
+    <Link to="login" className="btn bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white">Login Now</Link>
   </div>
 </div>
     );

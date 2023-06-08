@@ -2,7 +2,7 @@ import {  FaFacebook, FaTwitter, FaYoutube } from 'react-icons/fa';
 const Footer = () => {
     return (
         <div>
-           <footer className="footer p-10 bg-base-200 text-base-content">
+           <footer className="footer p-10 bg-base-600 text-base-content">
   <div>
   <div className="avatar">
   <div className="w-20 rounded-full">
