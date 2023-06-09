@@ -16,6 +16,7 @@ const Navbar = () => {
         <li><Link to="">Instructors</Link> </li>
         <li><Link to="classes">Classes</Link></li>
         <li>
+          {/* TODO: DASHBOARD  */}
           {user&& <Link to="">Dashboard</Link>}
           </li>
         <li>{
