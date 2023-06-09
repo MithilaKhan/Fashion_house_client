@@ -1,16 +1,32 @@
 
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import SignWithGoogle from "../../Components/SignWithGoogle";
 
 export default function Register() {
   const [show , setShow]= useState(false)
   const [cshow , setCshow] = useState(false)
-  const { register, handleSubmit, watch,getValues , formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  const { register, handleSubmit,getValues , formState: { errors } } = useForm();
+  const {signUp , updateUserProfile} = useContext(AuthContext)
 
-  console.log(watch("example")); // watch input value by passing the name of it
+  const onSubmit = data => { 
+    console.log(data) 
+    signUp(data.email , data.password)
+    .then(result => {
+
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      
+    updateUserProfile(data.name , data.photoUrl)
+      })
+    .catch(error => console.log(error))
+
+  };
+
+  
 
   const ShowPasswordHandle= ()=>{
     setShow(!show)
@@ -29,6 +45,8 @@ export default function Register() {
         <div className="card flex-shrink-0 w-full max-w-xl shadow-2xl bg-base-100">
         <h1 className="text-5xl font-bold p-6 bg-gradient-to-r from-orange-600 to-purple-600 text-transparent bg-clip-text">Create a new account</h1>
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+
+            {/* Name  */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
@@ -36,6 +54,8 @@ export default function Register() {
               <input type="text" {...register("name", { required: true })} name="name" placeholder="Name" className="input input-bordered" />
               {errors.name && <span className="text-red-600">This name is required</span>}
             </div>
+
+            {/* email  */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -43,6 +63,17 @@ export default function Register() {
               <input type="email" name="email" {...register("email", { required: true })} placeholder="email" className="input input-bordered" />
               {errors.email && <span className="text-red-600">This email is required</span>}
             </div>
+
+            {/* PhotoUrl  */}
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Photo </span>
+              </label>
+              <input type="url" name="photoUrl" {...register("photoUrl", { required: true })} placeholder="Photo Url" className="input input-bordered" />
+              {errors.photoUrl && <span className="text-red-600">This email is required</span>}
+            </div>
+
+            {/* password  */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
@@ -61,6 +92,7 @@ export default function Register() {
               {errors.password && <span className="text-red-600">{errors.password?.message}</span>}
             </div>
 
+              {/* confirm PassWord  */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Confirm Password</span>
@@ -79,7 +111,8 @@ export default function Register() {
               <button className="btn bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white">Register</button>
             </div>
           </form>
-          <p className="p-6">Already have an Account?? <span className="bg-gradient-to-r from-orange-600 to-purple-600 text-transparent bg-clip-text font-semibold"> <Link to="/login">Login</Link></span> </p>
+          <p className="p-6 pt-2">Already have an Account?? <span className="bg-gradient-to-r from-orange-600 to-purple-600 text-transparent bg-clip-text font-semibold"> <Link to="/login">Login</Link></span> </p> 
+          <SignWithGoogle/>
           
         </div>
       </div>

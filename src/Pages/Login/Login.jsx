@@ -1,12 +1,25 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import SignWithGoogle from "../../Components/SignWithGoogle";
 
 export default function Login() {
   const [show , setShow]= useState(false)
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
-  const onSubmit = data => console.log(data);
+  const {logIn}= useContext(AuthContext)
+  const onSubmit = data => {
+    console.log(data);
+    logIn(data.email , data.password)
+    .then(result => {
+
+      const loggedUser = result.user;
+      console.log(loggedUser);
+      
+    })
+    .catch(error => console.log(error))
+  }
 
   console.log(watch("example")); // watch input value by passing the name of it
 
@@ -49,7 +62,7 @@ export default function Login() {
             </div>
           </form>
           <p className="p-6">New to Fashion House?? Please <span className="bg-gradient-to-r from-pink-600 to-orange-600 text-transparent bg-clip-text font-semibold" ><Link to="/register">Create an account</Link> </span> </p>
-          
+          <SignWithGoogle/>
         </div>
       </div>
     </div>
