@@ -5,6 +5,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import SignWithGoogle from "../../Components/SignWithGoogle";
+import Swal from "sweetalert2";
 
 export default function Register() {
   const [show , setShow]= useState(false)
@@ -21,6 +22,34 @@ export default function Register() {
       console.log(loggedUser);
       
     updateUserProfile(data.name , data.photoUrl)
+    .then(() => {
+      const user ={name:data.name , email:data.email}
+        console.log('user profile info updated')
+        
+        fetch("http://localhost:5000/user" ,{
+          method:"POST" ,
+          headers:{
+            "content-type":"application/json"
+        },
+        body:JSON.stringify(user)
+        })
+        .then(res => res.json())
+        .then(data=> {
+          console.log(data);
+          if(data.insertedId){
+            Swal.fire({
+              position: 'top-end',
+              icon: 'success',
+              title: 'User created successfully.',
+              showConfirmButton: false,
+              timer: 1500
+          });
+          
+          }
+        })
+       
+
+    })
       })
     .catch(error => console.log(error))
 
