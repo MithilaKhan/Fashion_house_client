@@ -11,6 +11,20 @@ const SignWithGoogle = () => {
 
             const loggedUser = result.user;
             console.log(loggedUser);
+            const user ={name:loggedUser.displayName , email:loggedUser.email}
+            console.log('user profile info updated')
+            
+            fetch("http://localhost:5000/user" ,{
+              method:"POST" ,
+              headers:{
+                "content-type":"application/json"
+            },
+            body:JSON.stringify(user)
+            })
+            .then(res => res.json())
+            .then(()=> {
+             
+            })
             
           })
           .catch(error => console.log(error))
