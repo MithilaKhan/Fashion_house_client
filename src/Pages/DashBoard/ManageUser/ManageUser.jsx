@@ -1,11 +1,14 @@
 import Swal from "sweetalert2";
 import UseAllUser from "../../../Components/UseAllUser";
+import { useState } from "react";
 
 
 
 const ManageUser = () => {
     const [users , refetch] = UseAllUser()
     console.log(users);
+    const [isInstructor, setIsInstructor] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
     // make admin 
     const handleMakeAdmin = user =>{
@@ -24,6 +27,7 @@ const ManageUser = () => {
                     showConfirmButton: false,
                     timer: 1500
                   })
+                  setIsAdmin(true)
             }
         })
     }
@@ -46,6 +50,7 @@ const ManageUser = () => {
                     showConfirmButton: false,
                     timer: 1500
                   })
+                  setIsInstructor(true)
             }
         })
     }
@@ -71,9 +76,9 @@ const ManageUser = () => {
             <th>{index +1}</th>
         <td>{user.name}</td>
         <td>{user.email}</td>
-        <td>{user.role === 'admin' ?"admin" : <button onClick={() => handleMakeAdmin(user)} className="btn btn-sm bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white">Make Admin</button>}</td>
+        <td>{user.role === 'admin' ?"admin" : <button disabled={isAdmin} onClick={() => handleMakeAdmin(user)} className="btn btn-sm bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white">Make Admin</button>}</td>
 
-        <td>{user.role === "instructor" ? "instructor" : <button onClick={() => handleMakeInstructor(user)} className="btn btn-sm bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white">Make Instructor</button>}</td>
+        <td>{user.role === "instructor" ? "instructor" : <button disabled={isInstructor} onClick={() => handleMakeInstructor(user)} className="btn btn-sm bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white">Make Instructor</button>}</td>
            </tr>) 
         }
         
