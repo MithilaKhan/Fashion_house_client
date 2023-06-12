@@ -56,7 +56,7 @@ const logOut =()=>{
         else{
             localStorage.removeItem('access-token')
         }
-          setLoading(false)
+         
 
         })
         return ()=>{

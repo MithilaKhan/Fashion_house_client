@@ -32,7 +32,7 @@ const router = createBrowserRouter([
     },
     {
       path:"/dashBoard" ,
-      element:<DashBoard/>  ,
+      element:  <DashBoard/>  ,
       // errorElement: <ErrorPage />,
       children: [
         {

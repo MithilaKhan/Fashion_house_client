@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import SignWithGoogle from "../../Components/SignWithGoogle";
 
@@ -9,6 +9,10 @@ export default function Login() {
   const [show , setShow]= useState(false)
   const { register, handleSubmit, watch, formState: { errors } } = useForm();
   const {logIn}= useContext(AuthContext)
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
   const onSubmit = data => {
     console.log(data);
     logIn(data.email , data.password)
@@ -16,6 +20,7 @@ export default function Login() {
 
       const loggedUser = result.user;
       console.log(loggedUser);
+      navigate(from, { replace: true });
       
     })
     .catch(error => console.log(error))

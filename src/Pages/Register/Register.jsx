@@ -2,7 +2,7 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import SignWithGoogle from "../../Components/SignWithGoogle";
 import Swal from "sweetalert2";
@@ -12,6 +12,7 @@ export default function Register() {
   const [cshow , setCshow] = useState(false)
   const { register, handleSubmit,getValues , formState: { errors } } = useForm();
   const {signUp , updateUserProfile} = useContext(AuthContext)
+  const navigate = useNavigate();
 
   const onSubmit = data => { 
     console.log(data) 
@@ -44,7 +45,7 @@ export default function Register() {
               showConfirmButton: false,
               timer: 1500
           });
-          
+          navigate('/');
           }
         })
        
