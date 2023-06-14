@@ -59,7 +59,17 @@ const Navbar = () => {
         {navbar}
       </ul>
     </div>
-    <a className=" upper-case font-bold text-3xl bg-gradient-to-r from-pink-600 from-10% via-orange-500 via-30% to-purple-600 to-90% text-transparent bg-clip-text italic">Fashion House</a>
+    <div className="flex m-3">
+    <div className="avatar">
+  <div className="w-12 rounded-full">
+    <img src= "https://yt3.ggpht.com/a/AATXAJw3YCl6MrL6wOTMLXLFBQOEGVP1jfXkph71WA=s900-c-k-c0xffffffff-no-rj-mo" />
+  </div>
+</div>
+<a className="ms-2 upper-case font-bold text-3xl bg-gradient-to-r from-pink-600 from-10% via-orange-500 via-30% to-purple-600 to-90% text-transparent bg-clip-text italic">Fashion House</a>
+
+    </div>
+
+   
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 text-orange-600 font-semibold">

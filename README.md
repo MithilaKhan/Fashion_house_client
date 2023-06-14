@@ -1,8 +1,8 @@
 # Full Project Over view
 
-## Website-Name: Sports Academies
+## Website-Name: Fashion House
 
- Hosted in Firebase -> [Sports-Academies]()
+ Hosted in Firebase -> [Fashion Design]()
 * Project live link : Todo Link
 
 # Home-Page:
