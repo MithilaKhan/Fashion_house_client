@@ -1,11 +1,13 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 
 const ManageUsers = () => {
+  const [instructorDisabled, setInstructorDisabled] = useState(false);
+  const [adminDisabled, setAdminDisabled] = useState(false);
 const {data:users=[], refetch} = useQuery(['users'], async()=>{
-const res = await fetch('http://localhost:5000/users')
+const res = await fetch('https://fashion-design-server.vercel.app/users')
 return res.json();
 })
 console.log(users);
@@ -21,7 +23,7 @@ Swal.fire({
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/users/${user._id}`, {
+        fetch(`https://fashion-design-server.vercel.app/users/${user._id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())
@@ -44,7 +46,7 @@ Swal.fire({
 } 
 
 const handleMakeAdmin = (user) =>{
-fetch(`http://localhost:5000/users/admin/${user._id}`,{
+fetch(`https://fashion-design-server.vercel.app/users/admin/${user._id}`,{
 method:"PATCH"
 })
 .then(res=>res.json())
@@ -59,12 +61,13 @@ Swal.fire({
   showConfirmButton: false,
   timer: 1500
 })
+setAdminDisabled(true);
 }
 })
 }
 
 const handleMakeInstructor = (user) =>{
-fetch(`http://localhost:5000/users/instructor/${user._id}`,{
+fetch(`https://fashion-design-server.vercel.app/users/instructor/${user._id}`,{
 method:"PATCH"
 })
 .then(res=>res.json())
@@ -79,6 +82,7 @@ Swal.fire({
   showConfirmButton: false,
   timer: 1500
 })
+setInstructorDisabled(true);
 }
 })
 }
@@ -104,8 +108,9 @@ users?.map((user,index)=> <tr key={user._id} >
         <th>{index + 1}</th>
         <td>{user?.name}</td>
         <td>{user?.email}</td>
-        <td>{user.role === 'admin' ? <button className='btn btn-primary btn-sm'> admin </button>: <><button onClick={()=> handleMakeAdmin(user)}  className='btn btn-primary btn-sm'>Make Admin</button></>}</td>
-        <td>{user.role === 'instructor'? <button className='btn btn-primary btn-sm'> instructor </button>: <><button onClick={()=> handleMakeInstructor(user)}  className='btn btn-primary btn-sm'>Make Instructor</button></> }</td>
+        <td>{user.role === 'admin' ? <button className='btn btn-primary btn-sm'> admin </button>: <><button disabled={adminDisabled} onClick={()=> handleMakeAdmin(user)}  className='btn btn-primary btn-sm'>Make Admin</button></>}</td>
+
+        <td>{user.role === 'instructor'? <button className='btn btn-primary btn-sm'> instructor </button>: <><button disabled={instructorDisabled} onClick={()=> handleMakeInstructor(user)}  className='btn btn-primary btn-sm'>Make Instructor</button></> }</td>
       
         <td>  <button onClick={() => handleDelete(user)} className=" btn btn-ghost btn-md text-white hover:text-red-500  bg-red-500"> <FaTrash className='w-6 h-6'></FaTrash> </button> </td>
       </tr>)

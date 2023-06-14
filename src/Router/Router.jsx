@@ -74,7 +74,7 @@ import AllClasses from "../pages/AllClasses/AllClasses";
           path: "payment/:id",
           element: <Payment></Payment>,
           loader: ({ params }) =>
-            fetch(`http://localhost:5000/selectClass/${params.id}`),
+            fetch(`https://fashion-design-server.vercel.app/selectClass/${params.id}`),
         },
   
         {

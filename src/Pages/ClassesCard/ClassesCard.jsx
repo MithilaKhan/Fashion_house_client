@@ -23,7 +23,7 @@ const ClassesCard = ({ singleClass }) => {
     if (user && user.email) {
       const selectClasses = { selectClassId: _id, name, image, instructor, seats, price, email: user?.email }
       console.log(selectClasses);
-      fetch('http://localhost:5000/selectClass', {
+      fetch('https://fashion-design-server.vercel.app/selectClass', {
         method: 'POST',
         headers: {
           'content-type': 'application/json'
@@ -61,9 +61,9 @@ const ClassesCard = ({ singleClass }) => {
   }
 
   return (
-    <div className={`card lg:w-96 md:w-96 w-full  shadow-xl ${seats === 0 ? 'bg-red-500' : 'bg-base-200'}`}>
-      <figure className="px-10 pt-10 h-60">
-        <img src={image} alt="Shoes" className="rounded-xl h-full  transition-transform duration-1000 ease-in-out hover:scale-125 cursor-zoom-in" />
+    <div className={`card lg:w-96 md:w-80    shadow-xl ${seats === 0 ? 'bg-red-300 text-black border-solid border-2 border-red-600' : 'bg-base-200'}`}>
+      <figure className="px-10 pt-10 ">
+        <img src={image} alt="Shoes" className="rounded-xl h-60 w-72  transition-transform duration-1000 ease-in-out hover:scale-125 cursor-zoom-in" />
       </figure>
       <Slide>
         <div className="card-body items-center text-center">
@@ -75,19 +75,13 @@ const ClassesCard = ({ singleClass }) => {
             <p> Price: {price}.</p>
           </div>
           <div className="card-actions">
-            {/* {
-            isAdmin ?
-              <><button onClick={handleAddClass} className="btn btn-primary" disabled >Select</button> </>
-              : isInstructor ?
-                <><button onClick={handleAddClass} className="btn btn-primary" disabled>Select</button></> :
-                <><button onClick={handleAddClass} className="btn btn-primary" disabled={disabled}>Select</button></>
-          } */}
+           
             {isAdmin || isInstructor || seats === 0 ? (
               <>
                 <button
                   disabled
                   onClick={handleAddClass}
-                  className='btn btn-primary hover:bg-[#b31409] hover:text-white border-0'
+                  className='btn btn-sm bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white'
                 >
                   Select
                 </button>
@@ -96,7 +90,7 @@ const ClassesCard = ({ singleClass }) => {
               <>
                 <button
                   onClick={handleAddClass}
-                  className='btn btn-primary  hover:bg-[#4507d6] hover:text-white border-0'
+                  className='btn btn-sm bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white'
                 >
                   Select
                 </button>

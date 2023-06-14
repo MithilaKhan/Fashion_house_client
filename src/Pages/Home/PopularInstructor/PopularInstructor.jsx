@@ -8,7 +8,7 @@ import PopularInstructorCard from '../Home/PopularInstructorCard/PopularInstruct
 const PopularInstructor = () => {
 const [popularInstructor, setPopularInstructor] = useState([]);
 useEffect(()=>{
-fetch(`http://localhost:5000/popularInstructors/instructor`)
+fetch(`https://fashion-design-server.vercel.app/popularInstructors/instructor`)
 .then(res=>res.json())
 .then(data=>{
 console.log(data)

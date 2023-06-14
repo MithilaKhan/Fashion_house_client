@@ -14,7 +14,7 @@ const [axiosSecure] = useAxiosSecure();
       .then((result) => {
         const loggedUser = result.user;
         const saveUser = { name: loggedUser.displayName, email: loggedUser.email }
-        fetch(`http://localhost:5000/users`, {
+        fetch(`https://fashion-design-server.vercel.app/users`, {
           method: "POST",
           headers: {
             "content-type": "application/json"

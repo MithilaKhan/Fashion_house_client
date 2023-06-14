@@ -16,48 +16,48 @@ const Dashboard = () => {
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content  mx-5 flex flex-col justify-center">
           <Outlet></Outlet>
-          <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden ">Open drawer</label>
+          <label htmlFor="my-drawer-2" className="btn btn-warning drawer-button lg:hidden ">Open drawer</label>
         </div>
         <div className="drawer-side">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 w-80 h-full bg-yellow-600 text-base-content">
+          <ul className="menu p-4 w-80 h-full bg-purple-100 text-base-content rounded-md">
             <div className='divider'></div>
             {
               isAdmin ? <>
 
-                <h1 className="text-center text-2xl font-semibold text-blue-400 my-4">~~ Admin Home ~~</h1>
+                <h1 className="text-center text-2xl font-semibold text-pink-600 my-4">~~ Admin Home ~~</h1>
                 <img className="w-16 h-16 rounded-full mx-auto mb-4" src={user?.photoURL} alt="" />
-                <h3 className="text-xl font-medium text-amber-700 text-center mb-3">Admin: {user?.displayName} </h3>
+                <h3 className="text-xl font-medium text-orange-700 text-center mb-3">Admin: {user?.displayName} </h3>
 
 
-                <li>  <NavLink to="/dashboard/adminHome"> <FaHome className='w-6 h-6'></FaHome>  Admin Home </NavLink> </li>
-                <li>  <NavLink to="/dashboard/manageClasses"> <FaBookOpen className='w-6 h-6'></FaBookOpen> Manage Classes </NavLink> </li>
-                <li> <NavLink to="/dashboard/manageUsers"> <FaUserCircle className='w-6 h-6'></FaUserCircle > Manage Users </NavLink> </li>
+                <li className='text-black mb-4'>  <NavLink to="/dashboard/adminHome" > <FaHome className='w-6 h-6 text-black'></FaHome>  Admin Home </NavLink> </li>
+                <li className='text-black mb-4'>  <NavLink to="/dashboard/manageClasses"> <FaBookOpen className='w-6 h-6'></FaBookOpen> Manage Classes </NavLink> </li>
+                <li className='text-black mb-4'> <NavLink to="/dashboard/manageUsers"> <FaUserCircle className='w-6 h-6'></FaUserCircle > Manage Users </NavLink> </li>
               </>
                 : isInstructor ? <>
 
-                  <h1 className="text-center text-2xl font-semibold text-blue-400 my-4">~~ Instructor Home ~~</h1>
+                  <h1 className="text-center text-2xl font-semibold text-pink-400 my-4">~~ Instructor Home ~~</h1>
                   <img className="w-16 h-16 rounded-full mx-auto mb-4" src={user?.photoURL} alt="" />
-                  <h3 className="text-xl font-medium text-amber-700 text-center mb-3">Instructor: {user?.displayName}</h3>
+                  <h3 className="text-xl font-medium text-orange-700 text-center mb-3">Instructor: {user?.displayName}</h3>
 
                   {/*  */}
-                  <li> <NavLink to="/dashboard/addClass"> <FaBookmark className='w-6 h-6'></FaBookmark> Add A Class </NavLink> </li>
-                  <li> <NavLink to="/dashboard/myClass"> <FaBookOpen className='w-6 h-6'></FaBookOpen> My Class </NavLink> </li>
+                  <li className='text-black mb-4'> <NavLink to="/dashboard/addClass"> <FaBookmark className='w-6 h-6'></FaBookmark> Add A Class </NavLink> </li>
+                  <li className='text-black mb-4'> <NavLink to="/dashboard/myClass"> <FaBookOpen className='w-6 h-6'></FaBookOpen> My Class </NavLink> </li>
                 </> : <>
 
-                  <h1 className="text-center text-2xl font-semibold text-blue-400 my-4">~~ Student Home ~~</h1>
+                  <h1 className="text-center text-2xl font-semibold text-pink-400 my-4">~~ Student Home ~~</h1>
                   <img className="w-16 h-16 rounded-full mx-auto mb-4" src={user?.photoURL} alt="" />
-                  <h3 className="text-xl font-medium text-amber-700 text-center mb-3">Student: {user?.displayName}</h3>
+                  <h3 className="text-xl font-medium text-orange-700 text-center mb-3">Student: {user?.displayName}</h3>
 
-                  <li> <NavLink to="/dashboard/mySelectClass"> <FaBookmark className='w-6 h-6'></FaBookmark> My Selected classes </NavLink> </li>
-                  <li> <NavLink to="/dashboard/myEnrolledClass"> <FaBookOpen className='w-6 h-6'></FaBookOpen> My Enrolled classes </NavLink> </li>
-                  <li> <NavLink to="/dashboard/paymentHistory"> <FaDollarSign className='w-6 h-6'></FaDollarSign> Payment History </NavLink> </li>
+                  <li className='text-black mb-4'> <NavLink to="/dashboard/mySelectClass"> <FaBookmark className='w-6 h-6'></FaBookmark> My Selected classes </NavLink> </li>
+                  <li className='text-black mb-4'> <NavLink to="/dashboard/myEnrolledClass"> <FaBookOpen className='w-6 h-6'></FaBookOpen> My Enrolled classes </NavLink> </li>
+                  <li className='text-black mb-4'> <NavLink to="/dashboard/paymentHistory"> <FaDollarSign className='w-6 h-6'></FaDollarSign> Payment History </NavLink> </li>
                 </>
             }
             <div className='divider'></div>
-            <li><NavLink to="/"> <FaHome className='w-6 h-6'></FaHome> Home </NavLink> </li>
-            <li className=''> <NavLink to="/allClasses"> <FaBookOpen className='w-6 h-6 hover:text-blue-600'></FaBookOpen > All Classes</NavLink> </li>
-            <li> <NavLink to="/instructors"> <FaUserAlt className='w-6 h-5'></FaUserAlt> All Instructors </NavLink> </li>
+            <li className='text-black mb-4'><NavLink to="/"> <FaHome className='w-6 h-6'></FaHome> Home </NavLink> </li>
+            <li className='text-black mb-4'> <NavLink to="/allClasses"> <FaBookOpen className='w-6 h-6 '></FaBookOpen > All Classes</NavLink> </li>
+            <li className='text-black mb-4'> <NavLink to="/instructors"> <FaUserAlt className='w-6 h-5'></FaUserAlt> All Instructors </NavLink> </li>
           </ul>
 
         </div>
