@@ -92,14 +92,14 @@ const ManageClassTable = ({ index, singleClass }) => {
                 <td>{email}</td>
                 <td>{seats}</td>
                 <td>{price}</td>
-                <td>  <button className='btn bnt-primary btn-sm'>{status}</button> </td>
+                <td>  <button className='btn bg-pink-400 btn-sm'>{status}</button> </td>
                 {<> <td>
                     <button
                         disabled={
                             status === "deny" || status === "approved"
                         }
                         onClick={() => handleStatus(singleClass, "approved")}
-                        className='btn btn-primary btn-sm hover:bg-orange-600'>Approve</button>
+                        className='btn bg-purple-400 btn-sm hover:bg-orange-600'>Approve</button>
                 </td>
                     <td>
                         <button
@@ -107,7 +107,7 @@ const ManageClassTable = ({ index, singleClass }) => {
                                 status === "deny" || status === "approved"
                             }
                             onClick={() => handleStatus(singleClass, "deny")}
-                            className='btn btn-primary btn-sm hover:bg-orange-500'>Deny</button>
+                            className='btn bg-pink-600 btn-sm hover:bg-orange-500'>Deny</button>
                     </td> </>}
                 <td>
 
@@ -121,7 +121,7 @@ const ManageClassTable = ({ index, singleClass }) => {
                                     name='feedback'
                                     placeholder="Write your feedback here..."
                                     rows="4"
-                                    className="w-full p-2 mt-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="w-full p-2 mt-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-pink-500"
                                 ></input>
                                 <input className="btn text-white bg-red-500 hover:bg-black" type="submit" value="feedback" />
                             </form>

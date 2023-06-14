@@ -108,9 +108,9 @@ users?.map((user,index)=> <tr key={user._id} >
         <th>{index + 1}</th>
         <td>{user?.name}</td>
         <td>{user?.email}</td>
-        <td>{user.role === 'admin' ? <button className='btn btn-primary btn-sm'> admin </button>: <><button disabled={adminDisabled} onClick={()=> handleMakeAdmin(user)}  className='btn btn-primary btn-sm'>Make Admin</button></>}</td>
+        <td>{user.role === 'admin' ? <button className='btn btn-primary btn-sm'> admin </button>: <><button disabled={adminDisabled} onClick={()=> handleMakeAdmin(user)}  className='btn btn-sm bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white'>Make Admin</button></>}</td>
 
-        <td>{user.role === 'instructor'? <button className='btn btn-primary btn-sm'> instructor </button>: <><button disabled={instructorDisabled} onClick={()=> handleMakeInstructor(user)}  className='btn btn-primary btn-sm'>Make Instructor</button></> }</td>
+        <td>{user.role === 'instructor'? <button className='btn btn-primary btn-sm'> instructor </button>: <><button disabled={instructorDisabled} onClick={()=> handleMakeInstructor(user)}  className='btn btn-sm bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white'>Make Instructor</button></> }</td>
       
         <td>  <button onClick={() => handleDelete(user)} className=" btn btn-ghost btn-md text-white hover:text-red-500  bg-red-500"> <FaTrash className='w-6 h-6'></FaTrash> </button> </td>
       </tr>)

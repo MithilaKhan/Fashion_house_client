@@ -51,12 +51,12 @@ const MyClass = () => {
   }
 
   return (
-    <div className='w-full bg-gray-300 px-4 pt-4 pb-20 text-white mt-5'>
+    <div className='w-full bg-pink-100 px-4 pt-4 pb-20 text-black mt-5'>
       {/* <SectionTitle subheading="Class Show Now" heading="All Select Class"></SectionTitle> */}
       <div className="overflow-x-auto mt-9">
         <table className="table border rounded">
           {/* head */}
-          <thead className='font-semibold text-lg text-purple-700'>
+          <thead className='font-semibold text-lg text-pink-700'>
             <tr>
               <th>#</th>
               <th>Image</th>
