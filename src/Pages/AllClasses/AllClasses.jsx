@@ -14,7 +14,7 @@ setAllApprovedClasses(data)
 
   return (
    <div className='my-10'>
-<h2 className='text-center text-pink-600 text-3xl mb-8'>All Instructor Classes</h2>
+<h2 className='text-center text-pink-600 font-bold text-3xl mb-8'>All Instructor Classes</h2>
  <div className='grid sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-8 justify-items-center'>
       {
 allApprovedClasses.map(singleClass=><ClassesCard singleClass={singleClass} key={singleClass._id}></ClassesCard> )

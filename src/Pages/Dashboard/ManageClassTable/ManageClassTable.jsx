@@ -51,7 +51,7 @@ const ManageClassTable = ({ index, singleClass }) => {
 
     };
 
-
+//  prblm
     const handleStatus = (singleClass, status) => {
         fetch(`https://fashion-design-server.vercel.app/classes/${singleClass._id}/?status=${status}`, {
             method: "PATCH",

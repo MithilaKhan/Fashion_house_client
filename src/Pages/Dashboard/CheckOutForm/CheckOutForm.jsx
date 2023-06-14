@@ -98,7 +98,7 @@ const CheckOutForm = ({ price, id, selectClassId, name }) => {
     }
   };
   return (
-    <div className='mb-20 border border-blue-600 p-6 bg-blue-600'>
+    <div className='mb-20 border border-pink-600 p-6 bg-pink-600'>
       <form onSubmit={handleSubmit}>
         <CardElement
           options={{
@@ -122,7 +122,7 @@ const CheckOutForm = ({ price, id, selectClassId, name }) => {
       </form>
       {cardError && <p className='text-red-600 ml-8'>{cardError}</p>}
       {transactionId && (
-        <p className='text-green-500'>
+        <p className='text-purple-100'>
           Transaction complete with transactionId: {transactionId}
         </p>
       )}
