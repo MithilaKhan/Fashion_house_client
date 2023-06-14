@@ -19,7 +19,7 @@ const PaymentHistory = () => {
    
   return (
     <div>
-      <h2 className='text-center text-3xl my-4  text-blue-800'> Payment History  </h2>
+      <h2 className='text-center text-3xl my-4  text-pink-800'> Payment History  </h2>
  <div className=''>
 {
 payments.map(payment=><PaymentHistoryCard

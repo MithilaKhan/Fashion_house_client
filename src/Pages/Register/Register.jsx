@@ -55,7 +55,7 @@ const Register = () => {
   return (
   <div className="mt-12">
       <div className="border-2 border-[#ABABAB] px-4 md:px-12 py-4 md:py-6 md:w-1/2 mx-auto rounded-[10px]">
-        <h2 className="mb-8 text-2xl font-bold text-center">
+        <h2 className="mb-8 text-2xl font-bold text-pink-500 text-center">
           Create an account
         </h2>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -150,14 +150,14 @@ const Register = () => {
             )}
           </div>
           <input
-            className="w-full py-3 bg-[#2cdbde] rounded-[10px] font-semibold text-lg cursor-pointer"
+            className="w-full py-3bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white cursor-pointer"
             type="submit"
             value="Sign Up"
           />
         </form>
         <p className="mt-2 text-center">
           Already have an account?{" "}
-          <Link className="font-semibold text-blue-600" to="/login">
+          <Link className="font-semibold text-purple-600" to="/login">
             Login
           </Link>
         </p>

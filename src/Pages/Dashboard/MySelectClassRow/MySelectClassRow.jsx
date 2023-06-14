@@ -29,7 +29,7 @@ const MySelectClassRow = ({ index, handleDelete, selectClass }) => {
           <button onClick={() => handleDelete(_id)} className=" btn btn-ghost btn-md text-white hover:text-red-500  bg-red-500"> <FaTrash className='w-6 h-6'></FaTrash> </button>
         </th>
         <th>
-         <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-primary btn-sm hover:bg-green-500'>Payment</button> </Link> 
+         <Link to={`/dashboard/payment/${_id}`}><button className='btn btn-sm bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white  hover:bg-black-500'>Payment</button> </Link> 
         </th>
       </tr>
     </>

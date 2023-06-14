@@ -43,13 +43,13 @@ const MySelectedClass = () => {
   }
 
   return (
-    <div className='w-full bg-gray-300 px-4 pt-4 pb-20 text-white mt-5'>
+    <div className='w-full bg-pink-100 px-4 pt-4 pb-20 text-white mt-5'>
       <SectionTitle subheading="Class Show Now" heading="All Select Class"></SectionTitle>
         <h2 className='font-semibold  text-center text-xl'>Total Selected Class: {selectedClass?.length}</h2>
       <div className="overflow-x-auto mt-9">
         <table className="table border rounded">
           {/* head */}
-          <thead className='font-semibold text-lg text-purple-700'>
+          <thead className='font-semibold text-lg text-pink-500'>
             <tr>
               <th>#</th>
               <th>Image</th>

@@ -21,13 +21,13 @@ const MyEnrolledClasses = () => {
 console.log(enrollStudent);
 
   return (
-  <div className='w-full bg-gray-300 px-4 pt-4 pb-20 text-black mt-5'>
+  <div className='w-full bg-pink-100 px-4 pt-4 pb-20 text-black mt-5'>
       <SectionTitle subheading="Class Show Now" heading="All Enrolled Class"></SectionTitle>
         <h2 className='font-semibold  text-center text-xl'>Total Enrolled Class: {enrollStudent?.length}</h2>
       <div className="overflow-x-auto mt-9 text-center">
         <table className="table border rounded">
           {/* head */}
-          <thead className='font-semibold text-lg text-purple-700'>
+          <thead className='font-semibold text-lg text-pink-500'>
             <tr>
               <th>#</th>
               {/* <th>Image</th> */}

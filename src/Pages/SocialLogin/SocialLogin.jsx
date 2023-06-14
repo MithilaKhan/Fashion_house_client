@@ -34,7 +34,7 @@ const [axiosSecure] = useAxiosSecure();
   }
   return (
     <div className='mb-10 w-96 mx-auto'>
-      <button onClick={handleGoogleSignIn} className='btn btn-primary w-full text-center'>Google SignIn</button>
+      <button onClick={handleGoogleSignIn} className='btn bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white w-full text-center'>Google SignIn</button>
     </div>
   );
 };

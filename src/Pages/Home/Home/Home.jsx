@@ -1,5 +1,5 @@
 import React from 'react';
-// import Banner from '../Banner/Banner'; 
+import Banner from '../Banner/Banner'; 
 import PopularInstructor from '../PopularInstructor/PopularInstructor';
 import PopularClasses from '../PopularClasses/PopularClasses';
 // import AchieveMent from '../AchieveMent/AchieveMent'; 
@@ -7,7 +7,7 @@ import PopularClasses from '../PopularClasses/PopularClasses';
 const Home = () => {
   return (
     <div className='my-10'>
-     {/* <Banner></Banner> */}
+     <Banner></Banner>
 <PopularClasses></PopularClasses>
 <PopularInstructor></PopularInstructor>
 {/* <AchieveMent></AchieveMent> */}

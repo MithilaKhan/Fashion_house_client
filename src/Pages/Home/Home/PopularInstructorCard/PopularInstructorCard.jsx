@@ -10,9 +10,7 @@ const {name,email,image} = instructor;
   <div className="card-body items-center text-center">
     <h2 className="card-title">Name: {name}</h2>
     <p>Email: {email}</p>
-    <div className="card-actions">
-      <button className="btn btn-primary">Favorite</button>
-    </div>
+  
   </div>
 </div>
   );

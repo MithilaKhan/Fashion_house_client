@@ -10,10 +10,10 @@ const NotFound = () => {
 
   return (
     <div className="mt-5 mb-20">
-       <div className=" w-full mx-auto ">
+       {/* <div className=" w-full mx-auto ">  */}
 
-<iframe className="mx-auto w-full " src="https://embed.lottiefiles.com/animation/84918"></iframe>
-</div>
+<iframe className="mx-auto w-96 " src="https://embed.lottiefiles.com/animation/84918"></iframe>
+{/* </div>  */}
  <h2 className="font-bold text-center text-pink-700 text-6xl">404</h2>
       <p className="my-3 text-xl font-semibold text-center text-orange-600">
         This Page Not Found

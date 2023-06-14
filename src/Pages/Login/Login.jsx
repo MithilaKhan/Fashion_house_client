@@ -1,8 +1,8 @@
 import React, { useContext,useState } from 'react';
-// import loginImg from '../../assets/loginImage/Login.jpg'
+
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-// import { AuthContext } from '../../Providers/AuthProvider';
+
 import SocialLogin from '../SocialLogin/SocialLogin';
 import { useForm } from 'react-hook-form';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
@@ -45,35 +45,11 @@ const Login = () => {
   };
 
 
-  // const handleLogin = (event) => {
-  //   event.preventDefault();
-  //   const form = event.target;
-  //   const email = form.email.value;
-  //   const password = form.password.value;
-  //   console.log(email, password)
-  //   signInUser(email, password)
-  //     .then(result => {
-  //       const user = result.user;
-  //       console.log(user);
-  //       Swal.fire({
-  //         position: 'top-end',
-  //         icon: 'success',
-  //         title: 'Your work has been saved',
-  //         showConfirmButton: false,
-  //         timer: 1500
-  //       })
-  //       navigate(from, { replace: true })
-  //     })
-  //     .catch(error => {
-  //       console.log(error.message)
-  //     })
-  // }
-
   return (
 
 <div className="mt-12">
       <div className="border-2 border-[#ABABAB] px-4 md:px-12 py-4 md:py-6 md:w-1/2 mx-auto rounded-[10px]">
-        <h2 className="mb-8 text-2xl font-bold text-center">Login</h2>
+        <h2 className="mb-8 text-3xl p-5 text-pink-500 font-bold text-center">Login</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="my-3">
             <label className="font-semibold" htmlFor="email">
@@ -110,14 +86,14 @@ const Login = () => {
             <p className="text-red-500">{error}</p>
           </div>
           <input
-            className="w-full py-3 bg-[#2cdbde] rounded-[10px] font-semibold text-lg cursor-pointer"
+            className="w-full py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white cursor-pointer"
             type="submit"
             value="Login"
           />
         </form>
         <p className="mt-2 text-center">
           Don not have an account?{" "}
-          <Link className="font-semibold text-blue-600" to="/register">
+          <Link className="font-semibold text-pink-600" to="/register">
             Sign Up
           </Link>
         </p>
