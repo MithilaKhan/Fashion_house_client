@@ -2,7 +2,7 @@ import React from 'react';
 import Banner from '../Banner/Banner'; 
 import PopularInstructor from '../PopularInstructor/PopularInstructor';
 import PopularClasses from '../PopularClasses/PopularClasses';
-// import AchieveMent from '../AchieveMent/AchieveMent'; 
+import AchieveMent from '../AchieveMent/AchieveMent'; 
 
 const Home = () => {
   return (
@@ -10,7 +10,10 @@ const Home = () => {
      <Banner></Banner>
 <PopularClasses></PopularClasses>
 <PopularInstructor></PopularInstructor>
-{/* <AchieveMent></AchieveMent> */}
+<div className='mb-10'>
+<AchieveMent></AchieveMent> 
+</div>
+
 </div>
   );
 };
