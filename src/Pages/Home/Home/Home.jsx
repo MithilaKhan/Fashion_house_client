@@ -1,24 +1,18 @@
-import PopularClass from "../../PopularClass/PopularClass";
-import PopularInstructor from "../../PopularInstructor.jsx/PopularInstructor";
-import Banner from "../Banner/Banner";
-import TopSlider from "../Topslider/TopSlider";
+import React from 'react';
+// import Banner from '../Banner/Banner'; 
+import PopularInstructor from '../PopularInstructor/PopularInstructor';
+import PopularClasses from '../PopularClasses/PopularClasses';
+// import AchieveMent from '../AchieveMent/AchieveMent'; 
 
 const Home = () => {
-    return (
-        <div>
-            <Banner/>
-        <TopSlider/>
-        <div>
-            <h1 className="text-center m-6 font-bold text-purple-600 text-5xl italic">Popular Classes</h1>
-            <PopularClass/>
-        </div>
-        <div>
-            <h1 className="text-center m-6 font-bold text-pink-600 text-5xl italic">Popular Instructor</h1>
-            <PopularInstructor/>
-        </div>
-            
-        </div>
-    );
+  return (
+    <div className='my-10'>
+     {/* <Banner></Banner> */}
+<PopularClasses></PopularClasses>
+<PopularInstructor></PopularInstructor>
+{/* <AchieveMent></AchieveMent> */}
+</div>
+  );
 };
 
 export default Home;

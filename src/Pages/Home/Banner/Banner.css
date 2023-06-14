@@ -1,9 +1,0 @@
-.bannerBg{
-    margin: 0;
-    background-image:linear-gradient(rgba(70, 68, 68, 0.5) , rgba(65, 61, 61, 0.5)), url('https://img.freepik.com/free-photo/magnificent-woman-long-bright-skirt-dancing-studio-carefree-inspired-female-model-posing-with-pleasure-yellow_197531-11084.jpg?w=826&t=st=1686157203~exp=1686157803~hmac=d4c35a83809c87b1883c73db7c329bde7284afcd599d81ed035b50a504af0a91') ;
-    /* width: 100%; */
-    height:600px;
-    background-position: center ;
-    background-size: cover ;
-    overflow: hidden;
-}
