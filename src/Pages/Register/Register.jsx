@@ -150,7 +150,7 @@ const Register = () => {
             )}
           </div>
           <input
-            className="w-full py-3bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white cursor-pointer"
+            className="w-full py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-transparent  text-white cursor-pointer"
             type="submit"
             value="Sign Up"
           />

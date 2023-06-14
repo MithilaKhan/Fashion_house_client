@@ -4,7 +4,7 @@ import React from 'react';
 
 const Banner = () => {
   return (
-      <div className="carousel  h-[600px] mx-auto  xs:w-xl sm:w-xl xs:w-full md:max-w-full lg:max-w-screen-xl">
+      <div className="carousel w-full  h-[600px] mx-auto  xs:w-xl sm:w-xl xs:w-full md:max-w-full ">
         <div id="slide1" className="carousel-item relative w-full">
           <img
             src="https://img.freepik.com/free-photo/brunette-seamstress-apron-measuring-beautiful-fabric-black-dummy-workshop_171337-7341.jpg?w=1060&t=st=1686752927~exp=1686753527~hmac=f73f69ddddd73d406f9ae1c220a4d120620bb0206362bf4caf6a7f44bd1aa4cc"
